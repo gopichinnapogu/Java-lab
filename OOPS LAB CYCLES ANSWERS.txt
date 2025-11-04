@@ -1,0 +1,1361 @@
+*LAB CYCLE 1
+1)
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Hello Everyone...!! Welcome to RVR&JC...!!");
+    }
+}
+
+#OUTPUT:-
+Hello Everyone...!! Welcome to RVR&JC...!!
+-----------------------------------------------------------------------------------
+2)
+import java.util.Scanner;
+public class Circle {
+    static final double pi = 3.14159;
+    public double area(double radius) {
+        return pi * radius * radius;
+    }
+    public double perimeter(double radius) {
+        return 2 * pi * radius;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+
+        Circle circle = new Circle();
+
+        double area = circle.area(radius);
+        double perimeter = circle.perimeter(radius);
+
+        System.out.println("Area of the circle: " + area);
+        System.out.println("Perimeter of the circle: " + perimeter);
+
+        scanner.close();
+    }
+}
+
+#OUTPUT:-
+Enter the radius of the circle: 5
+Area of the circle: 78.53975
+Perimeter of the circle: 31.4159
+----------------------------------------------------------------------------------------
+3)
+import java.util.Scanner;
+
+public class Student {
+    int Rollno;
+    String Name;
+    String Gender;
+    String Sec;
+    String Dept;
+    String College;
+
+    public void disp() {
+        System.out.println("\nStudent Details:-");
+        System.out.println("Roll Number : " + Rollno);
+        System.out.println("Name        : " + Name);
+        System.out.println("Gender      : " + Gender);
+        System.out.println("Section     : " + Sec);
+        System.out.println("Department  : " + Dept);
+        System.out.println("College     : " + College);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Student s1 = new Student();
+
+        System.out.print("Enter Roll Number: ");
+        s1.Rollno = sc.nextInt();
+        sc.nextLine(); 
+
+        System.out.print("Enter Name: ");
+        s1.Name = sc.nextLine();
+
+        System.out.print("Enter Gender: ");
+        s1.Gender = sc.nextLine();
+
+        System.out.print("Enter Section: ");
+        s1.Sec = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        s1.Dept = sc.nextLine();
+
+        System.out.print("Enter College: ");
+        s1.College = sc.nextLine();
+
+        s1.disp();
+
+        sc.close();
+    }
+}
+
+#OUTPUT:-
+Enter Roll Number: 101
+Enter Name: Anjali
+Enter Gender: Female
+Enter Section: CSE-A
+Enter Department: Computer Science
+Enter College: RVR&JC
+
+Student Details:-
+Roll Number : 101
+Name        : Anjali
+Gender      : Female
+Section     : CSE-A
+Department  : Computer Science
+College     : RVR&JC
+----------------------------------------------------------------------------------
+4)
+import java.util.Scanner;
+
+public class Employee {
+    int ID;
+    String Name;
+    String Gender;
+    double Salary;
+    String Location;
+
+    public Employee(int empId, String empName, String empGender, double empSalary, String empLocation) {
+        ID = empId;
+        Name = empName;
+        Gender = empGender;
+        Salary = empSalary;
+        Location = empLocation;
+    }
+
+    public void disp() {
+        System.out.println("\nEmployee Details:-");
+        System.out.println("ID       : " + ID);
+        System.out.println("Name     : " + Name);
+        System.out.println("Gender   : " + Gender);
+        System.out.println("Salary   : " + Salary);
+        System.out.println("Location : " + Location);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Gender: ");
+        String gender = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double salary = sc.nextDouble();
+        sc.nextLine(); 
+
+        System.out.print("Enter Location: ");
+        String location = sc.nextLine();
+
+        Employee emp = new Employee(id, name, gender, salary, location);
+
+        emp.disp();
+
+        sc.close();
+    }
+}
+
+#OUTPUT:-
+Enter Employee ID: 1001
+Enter Name: Ravi Kumar
+Enter Gender: Male
+Enter Salary: 55000
+Enter Location: Guntur
+
+Employee Details:-
+ID       : 1001
+Name     : Ravi Kumar
+Gender   : Male
+Salary   : 55000.0
+Location : Guntur
+-------------------------------------------------------------------------------------
+*LAB CYCLE 2
+1)
+import java.util.Scanner;
+
+public class Student {
+
+    public int Rollno;
+    public String Name;
+    public String Gender;
+    public String Sec;
+    public String Dept;
+    public static String College = "RVR&JC";
+
+
+    static {
+        System.out.println("The statements of static block will be executed first");
+    }
+    public Student(int r, String n, String g, String s, String d) {
+        Rollno = r;
+        Name = n;
+        Gender = g;
+        Sec = s;
+        Dept = d;
+    }
+
+    public static void disp(Student s) {
+        System.out.println("\nStudent Details:-");
+        System.out.println("Roll Number : " + s.Rollno);
+        System.out.println("Name        : " + s.Name);
+        System.out.println("Gender      : " + s.Gender);
+        System.out.println("Section     : " + s.Sec);
+        System.out.println("Department  : " + s.Dept);
+        System.out.println("College     : " + College);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Roll Number: ");
+        int roll = sc.nextInt();
+        sc.nextLine(); 
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Gender: ");
+        String gender = sc.nextLine();
+
+        System.out.print("Enter Section: ");
+        String sec = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        String dept = sc.nextLine();
+
+        Student s1 = new Student(roll, name, gender, sec, dept);
+
+        disp(s1);
+
+        sc.close();
+    }
+}
+#OUTPUT:-
+Enter Roll Number: 256
+Enter Name: Pawan
+Enter Gender: Male
+Enter Section: CSM-E
+Enter Department: Computer Science
+
+Student Details:-
+Roll Number : 256
+Name        : Pawan
+Gender      : Male
+Section     : CSM-E
+Department  : Computer Science
+College     : RVR&JC
+
+----------------------------------------------------------------------------------------
+2)
+import java.util.Scanner;
+
+public class Employee {
+
+    public int ID;
+    public String Name;
+    public String Gender;
+    public double Salary;
+    public String Location;
+
+
+    public Employee(int ID, String Name, String Gender, double Salary, String Location) {
+        this.ID = ID;
+        this.Name = Name;
+        this.Gender = Gender;
+        this.Salary = Salary;
+        this.Location = Location;
+
+        this.disp();
+    }
+
+    public void disp() {
+        System.out.println("\nEmployee Details:-");
+        System.out.println("ID       : " + ID);
+        System.out.println("Name     : " + Name);
+        System.out.println("Gender   : " + Gender);
+        System.out.println("Salary   : " + Salary);
+        System.out.println("Location : " + Location);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        int ID = sc.nextInt();
+        sc.nextLine(); 
+
+        System.out.print("Enter Name: ");
+        String Name = sc.nextLine();
+
+        System.out.print("Enter Gender: ");
+        String Gender = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double Salary = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("Enter Location: ");
+        String Location = sc.nextLine();
+
+        Employee emp = new Employee(ID, Name, Gender, Salary, Location);
+
+        sc.close();
+    }
+}
+
+#OUTPUT:-
+Enter Employee ID: 3001
+Enter Name: Priya
+Enter Gender: Female
+Enter Salary: 62000
+Enter Location: Vijayawada
+
+Employee Details:-
+ID       : 3001
+Name     : Priya
+Gender   : Female
+Salary   : 62000.0
+Location : Vijayawada
+-----------------------------------------------------------------------------------
+*LAB CYCLE 3
+
+1)
+public class StaticNestedDemo {
+
+    public static String College = "RVR&JC";
+
+    static class Nested {
+        public void disp() {
+            System.out.println("College: " + StaticNestedDemo.College);
+        }
+    }
+
+    public static void main(String[] args) {
+        StaticNestedDemo.Nested obj = new StaticNestedDemo.Nested();
+
+        obj.disp();
+    }
+}
+
+#OUTPUTS:-
+College: RVR&JC
+----------------------------------------------------------------------------------
+2)
+public class NonStaticNestedDemo {
+    public final String College = "RVR&JC";
+
+    class Nested {
+        public void disp() {
+            System.out.println("College: " + College);
+        }
+    }
+
+    public static void main(String[] args) {
+        NonStaticNestedDemo outer = new NonStaticNestedDemo();
+        NonStaticNestedDemo.Nested nestedObj = outer.new Nested();
+        nestedObj.disp();
+    }
+}
+
+#OUTPUTS:-
+College: RVR&JC
+------------------------------------------------------------------------------------
+3)
+public class ConstructorOverloading {
+
+    public static final double pi = 3.14159;
+    public double radius;
+
+    public ConstructorOverloading() {
+        radius = 1.0; 
+    }
+
+    public ConstructorOverloading(double r) {
+        radius = r;
+    }
+
+    public ConstructorOverloading(double r, boolean useDefaultPi) {
+        radius = r;
+    }
+    public void disp() {
+        double area = pi * radius * radius;
+        double perimeter = 2 * pi * radius;
+        System.out.println("Radius: " + radius);
+        System.out.println("Area: " + area);
+        System.out.println("Perimeter: " + perimeter);
+        System.out.println("                        ");
+    }
+    public static void main(String[] args) {
+
+        ConstructorOverloading obj1 = new ConstructorOverloading(5.0);
+        ConstructorOverloading obj2 = new ConstructorOverloading(7.5);
+        ConstructorOverloading obj3 = new ConstructorOverloading(10.0, true);
+
+        obj1.disp();
+        obj2.disp();
+        obj3.disp();
+    }
+}
+
+#OUTPUTS:-
+Radius: 5.0
+Area: 78.53975
+Perimeter: 31.4159
+                        
+Radius: 7.5
+Area: 176.7144375
+Perimeter: 47.12385
+                        
+Radius: 10.0
+Area: 314.159
+Perimeter: 62.8318
+-----------------------------------------------------------------------------------------
+*LAB CYCLE 4
+1)
+class A {
+
+    protected int a = 10; // Initialized with a constant value
+}
+
+class B extends A {
+
+    int b = 20; 
+
+    public void add() {
+        int sum = a + b;
+        System.out.println("Value of a: " + a);
+        System.out.println("Value of b: " + b);
+        System.out.println("Sum (a+b): " + sum);
+    }
+}
+
+public class SingleInheritance {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.add();
+    }
+}
+
+#OUTPUTS:-
+Value of a: 10
+Value of b: 20
+Sum (a+b): 30
+-------------------------------------------------------------------------------------------
+2)
+class A {
+
+    protected int a = 5; 
+}
+
+class B extends A {
+
+    protected int b = 10; 
+    protected void add() {
+        int sum = a + b;
+        System.out.println("Addition (a + b): " + sum);
+    }
+}
+
+class C extends B {
+
+    int c = 3; 
+
+    public void mul() {
+        int product = b * c;
+        System.out.println("Multiplication (b * c): " + product);
+    }
+}
+
+public class MultilevelInheritance {
+    public static void main(String[] args) {
+
+        C obj = new C();
+        obj.add();
+        obj.mul(); 
+    }
+}
+
+#OUTPUTS:-
+Addition (a + b): 15
+Multiplication (b * c): 30
+---------------------------------------------------------------------------------------
+3)
+class Bank {
+     protected double ROI = 0.0;
+}
+
+class SBI extends Bank {
+       public void disp() {
+        ROI = 9.6;
+        System.out.println("SBI Rate of Interest: " + ROI + "%");
+    }
+}
+
+class ICICI extends Bank {
+
+    public void disp() {
+        ROI = 10.2;
+        System.out.println("ICICI Rate of Interest: " + ROI + "%");
+    }
+}
+
+class HDFC extends Bank {
+
+    public void disp() {
+        ROI = 10.5;
+        System.out.println("HDFC Rate of Interest: " + ROI + "%");
+    }
+}
+
+public class HierarchicalInheritance {
+    public static void main(String[] args) {
+
+        SBI sbiObj = new SBI();
+        ICICI iciciObj = new ICICI();
+        HDFC hdfcObj = new HDFC();
+
+        sbiObj.disp();
+        iciciObj.disp();
+        hdfcObj.disp();
+    }
+}
+
+#OUTPUTS:-
+SBI Rate of Interest: 9.6%
+ICICI Rate of Interest: 10.2%
+HDFC Rate of Interest: 10.5%
+-------------------------------------------------------------------------------------------
+4)
+import java.util.Scanner;
+
+class Employee {
+
+    String Name;
+    int ID;
+    String Designation;
+    String Company;
+
+    public void readInfo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Employee Name: ");
+        Name = sc.nextLine();
+        System.out.print("Enter Employee ID: ");
+        ID = sc.nextInt();
+        sc.nextLine(); // Consume newline
+        System.out.print("Enter Designation: ");
+        Designation = sc.nextLine();
+        System.out.print("Enter Company Name: ");
+        Company = sc.nextLine();
+    }
+}
+
+class Salary extends Employee {
+ 
+    double Basic, HRA, DA, PF, NetSal;
+
+    public void readSal() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Basic Salary: ");
+        Basic = sc.nextDouble();
+        System.out.print("Enter HRA: ");
+        HRA = sc.nextDouble();
+        System.out.print("Enter DA: ");
+        DA = sc.nextDouble();
+        System.out.print("Enter PF: ");
+        PF = sc.nextDouble();
+    }
+    public void calcSal() {
+        NetSal = Basic + HRA + DA + PF;
+    }
+
+    public void disp() {
+        System.out.println("\n Employee Details ");
+        System.out.println("Name       : " + Name);
+        System.out.println("ID         : " + ID);
+        System.out.println("Designation: " + Designation);
+        System.out.println("Company    : " + Company);
+        System.out.println("Basic      : " + Basic);
+        System.out.println("HRA        : " + HRA);
+        System.out.println("DA         : " + DA);
+        System.out.println("PF         : " + PF);
+        System.out.println("Net Salary : " + NetSal);
+    }
+}
+
+public class SingleInheritance {
+    public static void main(String[] args) {
+
+        Salary emp = new Salary();
+        emp.readInfo();
+        emp.readSal();
+        emp.calcSal();
+        emp.disp();
+    }
+}
+
+#OUTPUTS:-
+Enter Employee Name: Anitha
+Enter Employee ID: 101
+Enter Designation: Developer
+Enter Company Name: Infosys
+Enter Basic Salary: 30000
+Enter HRA: 5000
+Enter DA: 4000
+Enter PF: 2000
+
+ Employee Details 
+Name       : Anitha
+ID         : 101
+Designation: Developer
+Company    : Infosys
+Basic      : 30000.0
+HRA        : 5000.0
+DA         : 4000.0
+PF         : 2000.0
+Net Salary : 41000.0
+------------------------------------------------------------------------------------------
+*LAB CYCLE 5
+1)
+public class MethodOverloading {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    public float add(float a, float b) {
+        return a + b;
+    }
+    public float add(int a, float b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        MethodOverloading obj = new MethodOverloading();
+
+        System.out.println("add(int, int): " + obj.add(10, 20));
+        System.out.println("add(int, int, int): " + obj.add(5, 15, 25));
+        System.out.println("add(float, float): " + obj.add(3.5f, 2.5f));
+        System.out.println("add(int, float): " + obj.add(10, 4.5f));
+    }
+}
+
+#OUTPUTS:-
+add(int, int): 30
+add(int, int, int): 45
+add(float, float): 6.0
+add(int, float): 14.5
+------------------------------------------------------------------------------------
+2)
+class Bank {
+    public double dispROI() {
+        return 0.0;
+    }
+}
+
+class SBI extends Bank {
+    @Override
+    public double dispROI() {
+        return 8.8;
+    }
+}
+
+class ICICI extends Bank {   
+    @Override
+    public double dispROI() {
+        return 9.5;
+    }
+}
+
+class HDFC extends Bank {
+    @Override
+    public double dispROI() {
+        return 9.4;
+    }
+}
+
+class AXIS extends Bank {
+    @Override
+    public double dispROI() {
+        return 9.2;
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+
+        SBI sbi = new SBI();
+        ICICI icici = new ICICI();
+        HDFC hdfc = new HDFC();
+        AXIS axis = new AXIS();
+
+        System.out.println("SBI ROI: " + sbi.dispROI() + "%");
+        System.out.println("ICICI ROI: " + icici.dispROI() + "%");
+        System.out.println("HDFC ROI: " + hdfc.dispROI() + "%");
+        System.out.println("AXIS ROI: " + axis.dispROI() + "%");
+    }
+}
+
+#OUTPUTS:-
+SBI ROI: 8.8%
+ICICI ROI: 9.5%
+HDFC ROI: 9.4%
+AXIS ROI: 9.2%
+------------------------------------------------------------------------------------
+3)
+class FinalVariableDemo {
+    final int MAX_USERS; 
+
+    FinalVariableDemo() {
+        MAX_USERS = 100;
+        System.out.println("Final Variable MAX_USERS: " + MAX_USERS);
+    }
+}
+
+final class FinalClassDemo {
+    public void showMessage() {
+        System.out.println("This is a final class. It cannot be inherited.");
+    }
+}
+
+class Child extends Parent {
+    // Cannot override display() because it's final
+}
+
+class Parent {
+    public final void display() {
+        System.out.println("This is a final method. It cannot be overridden.");
+    }
+}
+
+public class FinalDemoMain {
+    public static void main(String[] args) {
+
+        FinalVariableDemo fv = new FinalVariableDemo();
+
+        FinalClassDemo fc = new FinalClassDemo();
+        fc.showMessage();
+
+        Child ch = new Child();
+        ch.display(); 
+    }
+}
+
+#OUTPUTS:-
+Final Variable MAX_USERS: 100
+This is a final class. It cannot be inherited.
+This is a final method. It cannot be overridden.
+-------------------------------------------------------------------------------------
+4)
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Superclass constructor called.");
+    }
+
+    void showDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Employee extends Person {
+    int employeeId;
+
+    Employee(String name, int age, int employeeId) {
+        super(name, age); 
+        this.employeeId = employeeId;
+    }
+
+    void displayInfo() {
+        System.out.println("Accessing superclass variables:");
+        System.out.println("Name from superclass: " + name); 
+        System.out.println("Age from superclass: " + age);
+        System.out.println("Employee ID: " + employeeId);
+
+        System.out.println("\nCalling superclass method:");
+        super.showDetails();
+    }
+}
+
+public class SuperDemo {
+    public static void main(String[] args) {
+        Employee emp = new Employee("Ravi", 30, 101);
+        emp.displayInfo();
+    }
+}
+
+#OUTPUTS:-
+Superclass constructor called.
+Accessing superclass variables:
+Name from superclass: Ravi
+Age from superclass: 30
+Employee ID: 101
+
+Calling superclass method:
+Name: Ravi
+Age: 30
+--------------------------------------------------------------------------------------
+*LAB CYCLE 6
+1)
+import java.util.Scanner;
+
+abstract class ArithmeticOperations {
+    int x, y;
+
+    ArithmeticOperations(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    abstract void add();
+    abstract void sub();
+    void mul() {
+        System.out.println("Multiplication: " + (x * y));
+    }
+
+    void div() {
+        if (y != 0) {
+            System.out.println("Division: " + ((double) x / y));
+        } else {
+            System.out.println("Division: Cannot divide by zero.");
+        }
+    }
+}
+
+class AO extends ArithmeticOperations {
+
+    AO(int x, int y) {
+        super(x, y);
+    }
+
+    void add() {
+        System.out.println("Addition: " + (x + y));
+    }
+
+    void sub() {
+        System.out.println("Subtraction: " + (x - y));
+    }
+}
+
+public class AbstractDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter value for x: ");
+        int x = sc.nextInt();
+        System.out.print("Enter value for y: ");
+        int y = sc.nextInt();
+
+        AO obj = new AO(x, y);
+
+        obj.add();
+        obj.sub();
+        obj.mul();
+        obj.div();
+    }
+}
+
+#OUTPUTS:-
+Enter value for x: 10
+Enter value for y: 5
+
+Addition: 15
+Subtraction: 5
+Multiplication: 50
+Division: 2.0
+-----------------------------------------------------------------------------------------
+2)
+interface Shape {
+    void area();
+}
+
+class Circle implements Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    public void area() {
+        double result = Math.PI * radius * radius;
+        System.out.println("Area of Circle: " + result);
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+
+        Circle c = new Circle(5.0);
+
+        c.area();
+    }
+}
+
+#OUTPUTS:-
+Area of Circle: 78.53981633974483
+-------------------------------------------------------------------------------------------
+3)
+interface Interface1 {
+    void disp1();
+    void disp2();
+}
+
+interface Interface2 extends Interface1 {
+    void disp3();
+    void disp4();
+}
+
+interface Interface3 extends Interface2 {
+    void disp5();
+    void disp6();
+}
+
+class Demo implements Interface3 {
+
+    public void disp1() {
+        System.out.println("Interface1: disp1() called.");
+    }
+
+    public void disp2() {
+        System.out.println("Interface1: disp2() called.");
+    }
+
+    public void disp3() {
+        System.out.println("Interface2: disp3() called.");
+    }
+
+    public void disp4() {
+        System.out.println("Interface2: disp4() called.");
+    }
+
+    public void disp5() {
+        System.out.println("Interface3: disp5() called.");
+    }
+
+    public void disp6() {
+        System.out.println("Interface3: disp6() called.");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+
+        Demo obj = new Demo();
+
+        obj.disp1();
+        obj.disp2();
+        obj.disp3();
+        obj.disp4();
+        obj.disp5();
+        obj.disp6();
+    }
+}
+
+#OUTPUTS:-
+Interface1: disp1() called.
+Interface1: disp2() called.
+Interface2: disp3() called.
+Interface2: disp4() called.
+Interface3: disp5() called.
+Interface3: disp6() called.
+---------------------------------------------------------------------------------------
+4)
+interface Interface1 {
+    void method1();
+}
+
+interface Interface2 {
+    void method2();
+}
+
+class MultiDemo implements Interface1, Interface2 {
+    public void method1() {
+        System.out.println("Method1 from Interface1 is called.");
+    }
+
+    public void method2() {
+        System.out.println("Method2 from Interface2 is called.");
+    }
+}
+
+public class MultipleInheritanceDemo {
+    public static void main(String[] args) {
+
+        MultiDemo obj = new MultiDemo();
+
+        obj.method1();
+        obj.method2();
+    }
+}
+
+#OUTPUTS:-
+Method1 from Interface1 is called.
+Method2 from Interface2 is called.
+-------------------------------------------------------------------------------------------
+*LAB CYCLE 7
+1)
+package ArithmeticOperations;
+
+public class Operations {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int sub(int a, int b) {
+        return a - b;
+    }
+
+    public int mul(int a, int b) {
+        return a * b;
+    }
+
+    public double div(int a, int b) {
+        if (b != 0) {
+            return (double) a / b;
+        } else {
+            System.out.println("Division by zero is not allowed.");
+            return 0.0;
+        }
+    }
+}
+
+import java.util.Scanner;
+import ArithmeticOperations.Operations;
+
+public class PackageDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int x = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int y = sc.nextInt();
+
+        Operations op = new Operations();
+
+        System.out.println("Addition: " + op.add(x, y));
+        System.out.println("Subtraction: " + op.sub(x, y));
+        System.out.println("Multiplication: " + op.mul(x, y));
+        System.out.println("Division: " + op.div(x, y));
+    }
+}
+
+#OUTPUTS:-
+Enter first number: 20
+Enter second number: 5
+
+Addition: 25
+Subtraction: 15
+Multiplication: 100
+Division: 4.0
+----------------------------------------------------------------------------------------
+*LAB CYCLE 8
+1)
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+
+        String str1 = "Hello";
+        String str2 = "World";
+        String str3 = "   Java Programming   ";
+
+        System.out.println("Original Strings:");
+        System.out.println("str1: " + str1);
+        System.out.println("str2: " + str2);
+        System.out.println("str3: " + str3);
+
+        String result = str1.concat(" ").concat(str2);
+        System.out.println("\n1.Concatenated String: " + result);
+
+        System.out.println("2.Length of str1: " + str1.length());
+
+        System.out.println("3.str1 in uppercase: " + str1.toUpperCase());
+        System.out.println("  str2 in lowercase: " + str2.toLowerCase());
+
+        System.out.println("4.Trimmed str3: '" + str3.trim() + "'");
+
+        System.out.println("5.Substring of str3 (index 3 to 7): " + str3.substring(3, 8));
+
+        System.out.println("6.Character at index 1 in str1: " + str1.charAt(1));
+
+        System.out.println("7.Replace 'Java' with 'Python' in str3: " + str3.replace("Java", "Python"));
+
+        System.out.println("8.str1 equals 'hello': " + str1.equals("hello"));
+        System.out.println("  str1 equalsIgnoreCase 'hello': " + str1.equalsIgnoreCase("hello"));
+
+        System.out.println("9.str1 starts with 'He': " + str1.startsWith("He"));
+        System.out.println("  str2 ends with 'ld': " + str2.endsWith("ld"));
+
+        System.out.println("10.Index of 'o' in str1: " + str1.indexOf('o'));
+    }
+}
+
+#OUTPUTS:-
+Original Strings:
+str1: Hello
+str2: World
+str3:    Java Programming   
+
+1.Concatenated String: Hello World
+2.Length of str1: 5
+3.str1 in uppercase: HELLO
+  str2 in lowercase: world
+4.Trimmed str3: 'Java Programming'
+5.Substring of str3 (index 3 to 7): " Jav"
+6.Character at index 1 in str1: e
+7.Replace 'Java' with 'Python' in str3:    Python Programming   
+8.str1 equals 'hello': false
+  str1 equalsIgnoreCase 'hello': true
+9.str1 starts with 'He': true
+  str2 ends with 'ld': true
+10.Index of 'o' in str1: 4
+--------------------------------------------------------------------------------------
+2)
+public class StringBufferDemo {
+    public static void main(String[] args) {
+
+        StringBuffer sb = new StringBuffer("Hello");
+
+        System.out.println("Original StringBuffer: " + sb);
+
+        sb.append(" World");
+        System.out.println("After append(): " + sb);
+
+        sb.insert(6, "Java ");
+        System.out.println("After insert(): " + sb);
+
+        sb.replace(6, 10, "Awesome");
+        System.out.println("After replace(): " + sb);
+
+        sb.delete(6, 13);
+        System.out.println("After delete(): " + sb);
+
+        sb.reverse();
+        System.out.println("After reverse(): " + sb);
+
+        System.out.println("Current capacity: " + sb.capacity());
+
+        System.out.println("Current length: " + sb.length());
+
+        sb.setLength(5);
+        System.out.println("After setLength(5): " + sb);
+    }
+}
+
+#OUTPUTS:-
+Original StringBuffer: Hello
+After append(): Hello World
+After insert(): Hello Java World
+After replace(): Hello Awesome World
+After delete(): Hello World
+After reverse(): dlroW olleH
+Current capacity: 21
+Current length: 11
+After setLength(5): dlroW
+----------------------------------------------------------------------------------------
+*LAB CYCLE 9
+1)
+public class ArithmeticExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = 0;
+            int result = a / b; 
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+        }
+    }
+}
+
+#OUTPUTS:-
+Caught ArithmeticException: / by zero
+----------------------------------------------------------------------------------------
+2)
+public class NestedTryDemo {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            try {
+                int result = arr[2] / 0;
+            } catch (ArithmeticException e) {
+                System.out.println("Inner catch: " + e);
+            }
+            System.out.println(arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Outer catch: " + e);
+        }
+    }
+}
+
+#OUTPUTS:-
+Inner catch: java.lang.ArithmeticException: / by zero
+Outer catch: java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 3
+-------------------------------------------------------------------------------------------3)
+public class MultipleCatchDemo {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            System.out.println(str.length());
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception");
+        } catch (NullPointerException e) {
+            System.out.println("Null Pointer Exception");
+        } catch (Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+#OUTPUTS:-
+Null Pointer Exception
+------------------------------------------------------------------------------------------
+4)
+public class UniversalCatchDemo {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[2];
+            arr[5] = 10;
+        } catch (Exception e) {
+            System.out.println("Caught Exception: " + e);
+        }
+    }
+}
+
+#OUTPUTS:-
+Caught Exception: java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 2
+-----------------------------------------------------------------------------------------
+5)
+public class ThrowDemo {
+    public static void main(String[] args) {
+        int age = 15;
+        try {
+            if (age < 18) {
+                throw new ArithmeticException("Not eligible to vote");
+            } else {
+                System.out.println("Eligible to vote");
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Exception thrown manually: " + e.getMessage());
+        }
+    }
+}
+
+#OUTPUTS:-
+Exception thrown manually: Not eligible to vote
+--------------------------------------------------------------------------------------
+6)
+public class ThrowsDemo {
+    static void checkAge(int age) throws Exception {
+        if (age < 18) {
+            throw new Exception("Age must be 18 or above");
+        }
+        System.out.println("Access granted");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkAge(16);
+        } catch (Exception e) {
+            System.out.println("Handled using throws: " + e.getMessage());
+        }
+    }
+}
+
+#OUTPUTS:-
+Handled using throws: Age must be 18 or above
+------------------------------------------------------------------------------------
+7)
+public class RethrowDemo {
+    static void riskyMethod() throws Exception {
+        try {
+            throw new Exception("Initial Exception");
+        } catch (Exception e) {
+            System.out.println("Caught and rethrowing...");
+            throw e;
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            riskyMethod();
+        } catch (Exception e) {
+            System.out.println("Handled rethrown exception: " + e.getMessage());
+        }
+    }
+}
+
+#OUTPUTS:-
+Caught and rethrowing...
+Handled rethrown exception: Initial Exception
+-------------------------------------------------------------------------------------------8)
+class NotEligibleForVoteException extends Exception {
+    NotEligibleForVoteException(String message) {
+        super(message);
+    }
+}
+
+public class UserDefinedExceptionDemo {
+    static void checkEligibility(int age) throws NotEligibleForVoteException {
+        if (age < 18) {
+            throw new NotEligibleForVoteException("You are not eligible to vote.");
+        }
+        System.out.println("You are eligible to vote.");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkEligibility(16);
+        } catch (NotEligibleForVoteException e) {
+            System.out.println("Custom Exception: " + e.getMessage());
+        }
+    }
+}
+
+#OUTPUTS:-
+Custom Exception: You are not eligible to vote.
+--------------------------------------------------------------------------------------
+9)
+public class FinallyDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = 0;
+            int result = a / b;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("This block always executes.");
+        }
+    }
+}
+#OUTPUTS:-
+Exception caught: / by zero
+This block always executes.
+
+
+
+
+
+
+
+
+
+
+
+
+
